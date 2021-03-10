@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Laboratorio_3_de_repaso
 {
-    class Propietarios
+    public class Propietarios
     {
         string dpi;
         string nombre;
