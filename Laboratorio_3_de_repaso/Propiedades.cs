@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Laboratorio_3_de_repaso
 {
-    class Propiedades
+    public class Propiedades
     {
         string no_casa;
         string dpi_dueño;

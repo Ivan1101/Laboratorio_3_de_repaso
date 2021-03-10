@@ -1,7 +1,7 @@
 ﻿
 namespace Laboratorio_3_de_repaso
 {
-    partial class Form1
+    partial class PROPIETARIO
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -100,7 +100,7 @@ namespace Laboratorio_3_de_repaso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(411, 266);
+            this.ClientSize = new System.Drawing.Size(392, 235);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox_Apellido);
             this.Controls.Add(this.label3);

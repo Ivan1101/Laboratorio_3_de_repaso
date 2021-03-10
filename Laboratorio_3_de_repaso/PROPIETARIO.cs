@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace Laboratorio_3_de_repaso
 {
-    public partial class Form1 : Form
+    public partial class PROPIETARIO : Form
     {
         List<Propietarios> propietarios = new List<Propietarios>();
-        public Form1()
+        public PROPIETARIO()
         {
             InitializeComponent();
         }
