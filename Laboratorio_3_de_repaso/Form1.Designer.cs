@@ -29,28 +29,28 @@ namespace Laboratorio_3_de_repaso
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox_propietarios = new System.Windows.Forms.TextBox();
+            this.textBox_Nombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox_Apellido = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textBox_propietarios
             // 
-            this.textBox1.Location = new System.Drawing.Point(110, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.textBox_propietarios.Location = new System.Drawing.Point(110, 46);
+            this.textBox_propietarios.Name = "textBox_propietarios";
+            this.textBox_propietarios.Size = new System.Drawing.Size(100, 20);
+            this.textBox_propietarios.TabIndex = 0;
             // 
-            // textBox2
+            // textBox_Nombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(110, 98);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
+            this.textBox_Nombre.Location = new System.Drawing.Point(110, 98);
+            this.textBox_Nombre.Name = "textBox_Nombre";
+            this.textBox_Nombre.Size = new System.Drawing.Size(100, 20);
+            this.textBox_Nombre.TabIndex = 1;
             // 
             // label1
             // 
@@ -64,7 +64,7 @@ namespace Laboratorio_3_de_repaso
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 105);
+            this.label2.Location = new System.Drawing.Point(41, 98);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 3;
@@ -79,21 +79,22 @@ namespace Laboratorio_3_de_repaso
             this.label3.TabIndex = 4;
             this.label3.Text = "APELLIDO";
             // 
-            // textBox3
+            // textBox_Apellido
             // 
-            this.textBox3.Location = new System.Drawing.Point(110, 147);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 5;
+            this.textBox_Apellido.Location = new System.Drawing.Point(110, 147);
+            this.textBox_Apellido.Name = "textBox_Apellido";
+            this.textBox_Apellido.Size = new System.Drawing.Size(100, 20);
+            this.textBox_Apellido.TabIndex = 5;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(245, 149);
+            this.button1.Location = new System.Drawing.Point(256, 149);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 6;
             this.button1.Text = "Ingresar datos";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -101,12 +102,12 @@ namespace Laboratorio_3_de_repaso
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 278);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox_Apellido);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBox_Nombre);
+            this.Controls.Add(this.textBox_propietarios);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -116,12 +117,12 @@ namespace Laboratorio_3_de_repaso
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox_propietarios;
+        private System.Windows.Forms.TextBox textBox_Nombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox_Apellido;
         private System.Windows.Forms.Button button1;
     }
 }
