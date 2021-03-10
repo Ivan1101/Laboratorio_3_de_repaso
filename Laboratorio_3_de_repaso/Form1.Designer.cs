@@ -29,7 +29,7 @@ namespace Laboratorio_3_de_repaso
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox_propietarios = new System.Windows.Forms.TextBox();
+            this.textBox_Dpi = new System.Windows.Forms.TextBox();
             this.textBox_Nombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,12 +38,12 @@ namespace Laboratorio_3_de_repaso
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox_propietarios
+            // textBox_Dpi
             // 
-            this.textBox_propietarios.Location = new System.Drawing.Point(110, 46);
-            this.textBox_propietarios.Name = "textBox_propietarios";
-            this.textBox_propietarios.Size = new System.Drawing.Size(100, 20);
-            this.textBox_propietarios.TabIndex = 0;
+            this.textBox_Dpi.Location = new System.Drawing.Point(110, 46);
+            this.textBox_Dpi.Name = "textBox_Dpi";
+            this.textBox_Dpi.Size = new System.Drawing.Size(100, 20);
+            this.textBox_Dpi.TabIndex = 0;
             // 
             // textBox_Nombre
             // 
@@ -107,9 +107,10 @@ namespace Laboratorio_3_de_repaso
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_Nombre);
-            this.Controls.Add(this.textBox_propietarios);
+            this.Controls.Add(this.textBox_Dpi);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,7 +118,7 @@ namespace Laboratorio_3_de_repaso
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox_propietarios;
+        private System.Windows.Forms.TextBox textBox_Dpi;
         private System.Windows.Forms.TextBox textBox_Nombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
