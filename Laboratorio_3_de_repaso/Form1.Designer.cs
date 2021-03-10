@@ -90,7 +90,7 @@ namespace Laboratorio_3_de_repaso
             // 
             this.button1.Location = new System.Drawing.Point(256, 149);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(106, 23);
             this.button1.TabIndex = 6;
             this.button1.Text = "Ingresar datos";
             this.button1.UseVisualStyleBackColor = true;
@@ -100,7 +100,7 @@ namespace Laboratorio_3_de_repaso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 278);
+            this.ClientSize = new System.Drawing.Size(411, 266);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox_Apellido);
             this.Controls.Add(this.label3);

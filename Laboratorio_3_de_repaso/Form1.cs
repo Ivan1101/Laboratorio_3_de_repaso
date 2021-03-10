@@ -63,12 +63,12 @@ namespace Laboratorio_3_de_repaso
             propietarios.Add(propietariostemp);
             guardar_datos("Propietarios.txt");
             limpiar();
-            MessageBox.Show("Proietario agregado correctamente");
+            MessageBox.Show("Propietario agregado correctamente");
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            leer_datos("Propietarios.txt");
         }
     }
 }
