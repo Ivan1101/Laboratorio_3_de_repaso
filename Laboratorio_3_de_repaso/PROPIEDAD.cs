@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace Laboratorio_3_de_repaso
 {
+
     public partial class PROPIEDAD : Form
     {
         List<Propiedades> propiedades = new List<Propiedades>();
@@ -19,10 +20,20 @@ namespace Laboratorio_3_de_repaso
         string archivo3 = "Dueño.txt";
         List<Propietarios> propietarios = new List<Propietarios>();
         string archivo1 = "Propietarios.txt";
+        public void bloqueo_principal()
+        {
+            comboBox_dpi.Enabled = false;
+            textBox_numero_casa.Enabled = false;
+            textBox_mantenimiento.Enabled = false;
+            button2.Visible = true;
+
+        }
         public PROPIEDAD()
         {
             InitializeComponent();
+            bloqueo_principal();
         }
+       
         public void guardar_datos()
         {
             FileStream stream2 = new FileStream(archivo3, FileMode.OpenOrCreate, FileAccess.Write);
@@ -77,6 +88,25 @@ namespace Laboratorio_3_de_repaso
             reader4.Close();
         }
 
-     
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dueño dueño_temp = new Dueño();
+            dueño_temp.Nombre_apellido = comboBox_dpi.SelectedValue.ToString();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            comboBox_dpi.Enabled = true;
+            textBox_numero_casa.Enabled = true;
+            textBox_mantenimiento.Enabled = true;
+
+            comboBox_dpi.DisplayMember = "Dpi";
+            comboBox_dpi.ValueMember = "Nombre";
+            comboBox_dpi.DataSource = null;
+            comboBox_dpi.DataSource = propietarios;
+            comboBox_dpi.Refresh();
+
+            button2.Visible = false;
+        }
     }
 }
