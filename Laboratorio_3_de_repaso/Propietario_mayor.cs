@@ -18,6 +18,7 @@ namespace Laboratorio_3_de_repaso
         public float Cuota_total { get => cuota_total; set => cuota_total = value; }
         public string Dpi { get => dpi; set => dpi = value; }
 
+
        
     }
 }
