@@ -60,9 +60,6 @@ namespace Laboratorio_3_de_repaso
 
         }
         public void leer_datos (){
-           
-
-
             FileStream stream2 = new FileStream(archivo2, FileMode.Open, FileAccess.Read);
             StreamReader reader2 = new StreamReader(stream2);
             while (reader2.Peek() > -1)
@@ -172,6 +169,7 @@ namespace Laboratorio_3_de_repaso
         private void PROPIEDAD_Load(object sender, EventArgs e)
         {
             leer_datos();
+           
         }
     }
 }

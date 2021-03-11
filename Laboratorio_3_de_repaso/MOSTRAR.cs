@@ -18,6 +18,7 @@ namespace Laboratorio_3_de_repaso
         List<Propietario_mayor> propietario_Mayor = new List<Propietario_mayor>();
         string archivo4= "Propietario mayor.txt";
         List<Propiedades> propiedades = new List<Propiedades>();
+        List<Propietarios> propietarios = new List<Propietarios>();
         public MOSTRAR()
         {
             InitializeComponent();
@@ -66,7 +67,7 @@ namespace Laboratorio_3_de_repaso
                     if (propiedades[x].Dpi_dueño.Equals(propietario_Mayor[y]))
                     {
                         //Propietario_mayor temppropietario_mayor = new Propietario_mayor();
-                        propietario_Mayor[y].Contador_propiedades++;
+                        propietario_Mayor[y].Contador_propiedades= propietario_Mayor[y].Contador_propiedades+1;
                     }
                     else
                     {
@@ -75,7 +76,7 @@ namespace Laboratorio_3_de_repaso
                         propietario_Mayortemp.Nombre_apellido = al.Nombre_apellido;
                         propietario_Mayortemp.Dpi = al.Dpi;
                         propietario_Mayortemp.Contador_propiedades = al.Contador_propiedades;
-                        propietario_Mayortemp.Cuota_total = al.Cuota_total;conse
+                        propietario_Mayortemp.Cuota_total = al.Cuota_total;
                     }
                 }
             }
@@ -88,7 +89,18 @@ namespace Laboratorio_3_de_repaso
             dataGridView1.DataSource = dueño;
             dataGridView1.Refresh();
         }
+        public void cargar()
+        {
+            foreach( var p in propiedades)
+            {
+                Propietario_mayor propietario_medio = new Propietario_mayor();
+                Propietarios temppropietario = propietarios.Find(l => l.Dpi == p.Dpi_dueño);
+                propietario_medio.Dpi = p.Dpi_dueño;
+                propietario_medio.Nombre_apellido = temppropietario.Nombre+" "+temppropietario.Apellido;
 
+                propietario_Mayor.Add(propietario_medio);
+            }
+        }
        
             private void button1_Click(object sender, EventArgs e)
         {
@@ -99,6 +111,7 @@ namespace Laboratorio_3_de_repaso
 
         private void MOSTRAR_Load(object sender, EventArgs e)
         {
+            cargar();
 
             leer_datos();
             mostrar();
@@ -118,9 +131,15 @@ namespace Laboratorio_3_de_repaso
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
+
+            cargar();
             verificar_propiedades();
-            Propietario_mayor alto = propietario_Mayor.OrderByDescending(al => al.Contador_propiedades).First();
-            label1.Text = alto.Nombre_apellido;
+            //Propietario_mayor temppropietario = new Propietario_mayor();
+            List<Propietario_mayor> temppropietario = new List<Propietario_mayor>();
+            temppropietario = propietario_Mayor.OrderByDescending(al => al.Contador_propiedades).ToList();
+            Propietario_mayor propietario = new Propietario_mayor();
+            propietario = temppropietario[0];
+            label1.Text = propietario.Nombre_apellido;
         }
     }
 }
