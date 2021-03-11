@@ -71,7 +71,7 @@ namespace Laboratorio_3_de_repaso
             this.groupBox1.Controls.Add(this.radioButton3);
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(392, 38);
+            this.groupBox1.Location = new System.Drawing.Point(392, 23);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(305, 178);
             this.groupBox1.TabIndex = 2;
@@ -99,7 +99,7 @@ namespace Laboratorio_3_de_repaso
             this.radioButton5.Size = new System.Drawing.Size(211, 20);
             this.radioButton5.TabIndex = 4;
             this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Mostrar las 3 cuotas mas bajas";
+            this.radioButton5.Text = "Mostrar las 3 cuotas más bajas";
             this.radioButton5.UseVisualStyleBackColor = true;
             this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
             // 
@@ -112,7 +112,7 @@ namespace Laboratorio_3_de_repaso
             this.radioButton4.Size = new System.Drawing.Size(206, 20);
             this.radioButton4.TabIndex = 3;
             this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Mostrar las 3 cuotas mas altas";
+            this.radioButton4.Text = "Mostrar las 3 cuotas más altas";
             this.radioButton4.UseVisualStyleBackColor = true;
             this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
