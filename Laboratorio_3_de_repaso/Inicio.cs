@@ -42,5 +42,10 @@ namespace Laboratorio_3_de_repaso
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

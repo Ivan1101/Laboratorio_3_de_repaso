@@ -16,7 +16,7 @@ namespace Laboratorio_3_de_repaso
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PROPIETARIO());
+            Application.Run(new Inicio());
         }
     }
 }
