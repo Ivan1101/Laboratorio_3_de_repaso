@@ -91,6 +91,7 @@ namespace Laboratorio_3_de_repaso
                     {
                         //Propietario_mayor temppropietario_mayor = new Propietario_mayor();
                         propietario_Mayor[y].Contador_propiedades= propietario_Mayor[y].Contador_propiedades+1;
+                        propietario_Mayor[y].Cuota_total += propiedades[x].Cuota_mantenimiento;
                     }
                     else
                     {
@@ -100,6 +101,7 @@ namespace Laboratorio_3_de_repaso
                         propietario_Mayortemp.Dpi = al.Dpi;
                         propietario_Mayortemp.Contador_propiedades = al.Contador_propiedades;
                         propietario_Mayortemp.Cuota_total = al.Cuota_total;
+                        propietario_Mayor.Add(propietario_Mayortemp);
                     }
                 }
             }
@@ -169,9 +171,30 @@ namespace Laboratorio_3_de_repaso
             propiedades = propiedades.OrderByDescending(cuota => cuota.Cuota_mantenimiento).ToList();
             for (int x = 0; x < 3; x++)
             {
-                temp_cuota = temp_cuota + propiedades[x].Cuota_mantenimiento + "\n";
+                temp_cuota = temp_cuota +"Q."+ propiedades[x].Cuota_mantenimiento + "\n";
 
             }
+            richTextBox1.Text = temp_cuota;
+        }
+
+        private void radioButton5_CheckedChanged(object sender, EventArgs e)
+        {
+            string temp_cuota  ="";
+            propiedades = propiedades.OrderBy(cuota => cuota.Cuota_mantenimiento).ToList();
+            for (int x = 0; x < 3; x++)
+            {
+                temp_cuota = temp_cuota + "Q." + propiedades[x].Cuota_mantenimiento + "\n";
+
+            }
+            richTextBox1.Text = temp_cuota;
+
+        }
+
+        private void radioButton6_CheckedChanged(object sender, EventArgs e)
+        {
+            verificar_propiedades();
+            propietario_Mayor = propietario_Mayor.OrderByDescending(cuota => cuota.Cuota_total).ToList();
+            label1.Text = propietario_Mayor[0].Nombre_apellido;
         }
     }
 }
