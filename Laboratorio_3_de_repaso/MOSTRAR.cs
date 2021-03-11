@@ -16,7 +16,7 @@ namespace Laboratorio_3_de_repaso
         List<Dueño> dueño = new List<Dueño>();
         string archivo3 = "Dueño.txt";
         List<Propietario_mayor> propietario_Mayor = new List<Propietario_mayor>();
-        
+        string archivo4 = "Propietario mayor.txt";
         List<Propiedades> propiedades = new List<Propiedades>();
         string archivo2 = "Propiedades.txt";
         List<Propietarios> propietarios = new List<Propietarios>();
@@ -24,6 +24,8 @@ namespace Laboratorio_3_de_repaso
         public MOSTRAR()
         {
             InitializeComponent();
+            label1.Visible = false;
+            label2.Visible = false;
         }
         void leer_datos()
         {
@@ -80,7 +82,7 @@ namespace Laboratorio_3_de_repaso
             }
         }
 
-            private void verificar_propiedades() // retorna 0 si no se encuentra en la lista
+            private void verificar_propiedades1() // retorna 0 si no se encuentra en la lista
         {
             for (int x = 0; x < propiedades.Count; x++)
             {
@@ -91,6 +93,31 @@ namespace Laboratorio_3_de_repaso
                     {
                         //Propietario_mayor temppropietario_mayor = new Propietario_mayor();
                         propietario_Mayor[y].Contador_propiedades= propietario_Mayor[y].Contador_propiedades+1;
+                    }
+                    else
+                    {
+                        Propietario_mayor al = propietario_Mayor.Find(c => c.Dpi.Equals(propiedades[x].Dpi_dueño));
+                        Propietario_mayor propietario_Mayortemp = new Propietario_mayor();
+                        propietario_Mayortemp.Nombre_apellido = al.Nombre_apellido;
+                        propietario_Mayortemp.Dpi = al.Dpi;
+                        propietario_Mayortemp.Contador_propiedades = al.Contador_propiedades;
+                    }
+                }
+            }
+
+        }
+
+        private void verificar_propiedades2() // retorna 0 si no se encuentra en la lista
+        {
+            for (int x = 0; x < propiedades.Count; x++)
+            {
+
+                for (int y = 0; y < propietario_Mayor.Count; y++)
+                {
+                    if (propiedades[x].Dpi_dueño.Equals(propietario_Mayor[y].Dpi))
+                    {
+                        //Propietario_mayor temppropietario_mayor = new Propietario_mayor();
+                        propietario_Mayor[y].Contador_propiedades = propietario_Mayor[y].Contador_propiedades + 1;
                         propietario_Mayor[y].Cuota_total += propiedades[x].Cuota_mantenimiento;
                     }
                     else
@@ -107,7 +134,6 @@ namespace Laboratorio_3_de_repaso
             }
 
         }
-
         public void mostrar()
         {
             dataGridView1.Text = null;
@@ -158,9 +184,11 @@ namespace Laboratorio_3_de_repaso
         {
 
             //  cargar();
-           // leer_datos();
-            verificar_propiedades();
-
+            // leer_datos();
+            label1.Text = "";
+            label1.Visible = true;
+            label2.Visible = false;
+            verificar_propiedades1();
             Propietario_mayor temppropietario = propietario_Mayor.OrderByDescending(al => al.Contador_propiedades).First();
             label1.Text = temppropietario.Nombre_apellido;
         }
@@ -192,9 +220,12 @@ namespace Laboratorio_3_de_repaso
 
         private void radioButton6_CheckedChanged(object sender, EventArgs e)
         {
-            verificar_propiedades();
+            label2.Text = "";
+            label2.Visible = true;
+            label1.Visible = false;
+            verificar_propiedades2();
             propietario_Mayor = propietario_Mayor.OrderByDescending(cuota => cuota.Cuota_total).ToList();
-            label1.Text = propietario_Mayor[0].Nombre_apellido;
+            label2.Text = propietario_Mayor[0].Nombre_apellido+ " " +"Q."+ propietario_Mayor[0].Cuota_total;
         }
     }
 }
