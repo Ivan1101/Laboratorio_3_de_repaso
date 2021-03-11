@@ -37,5 +37,10 @@ namespace Laboratorio_3_de_repaso
             v3.Show();
             this.SetVisibleCore(false);
         }
+
+        private void Inicio_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
