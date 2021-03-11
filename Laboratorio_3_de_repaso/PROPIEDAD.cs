@@ -87,13 +87,47 @@ namespace Laboratorio_3_de_repaso
             }
             reader4.Close();
         }
-
+        public void  limpiar_ingreso() {
+          textBox_numero_casa.Text = "";
+            comboBox_dpi.Text = null;
+            textBox_mantenimiento.Text = "";
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            Dueño dueño_temp = new Dueño();
-            dueño_temp.Nombre_apellido = comboBox_dpi.SelectedValue.ToString();
-        }
+            try
+            {
 
+                Dueño dueño_temp = new Dueño();
+                Propiedades propiedadestemp = new Propiedades();
+                propiedadestemp.No_casa = textBox_numero_casa.Text;
+                dueño_temp.No_casa = textBox_numero_casa.Text;
+                propiedadestemp.Dpi_dueño = comboBox_dpi.Text;
+                string tempnombre = "";
+                string tempapellido = "";
+
+                comboBox_dpi.ValueMember = "Nombre";
+                comboBox_dpi.DataSource = propietarios;
+                tempnombre = comboBox_dpi.SelectedValue.ToString();
+                comboBox_dpi.ValueMember = "Apellido";
+                comboBox_dpi.DataSource = propietarios;
+                tempapellido = comboBox_dpi.SelectedValue.ToString();
+
+                dueño_temp.Nombre_apellido = tempnombre + " " + tempapellido;
+
+                propiedadestemp.Cuota_mantenimiento = float.Parse(textBox_mantenimiento.Text);
+                dueño_temp.Cuota_mantenimiento = float.Parse(textBox_mantenimiento.Text);
+                propiedades.Add(propiedadestemp);
+                dueño.Add(dueño_temp);
+                guardar_datos();
+                limpiar_ingreso();
+                MessageBox.Show("Propiedad agregado correctamente");
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Falta el ingreso de un dato");
+            }
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             comboBox_dpi.Enabled = true;
