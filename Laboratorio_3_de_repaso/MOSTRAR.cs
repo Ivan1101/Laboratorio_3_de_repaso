@@ -16,7 +16,7 @@ namespace Laboratorio_3_de_repaso
         List<Dueño> dueño = new List<Dueño>();
         string archivo3 = "Dueño.txt";
         List<Propietario_mayor> propietario_Mayor = new List<Propietario_mayor>();
-        string archivo4= "Propietario mayor.txt";
+        
         List<Propiedades> propiedades = new List<Propiedades>();
         string archivo2 = "Propiedades.txt";
         List<Propietarios> propietarios = new List<Propietarios>();
@@ -161,6 +161,17 @@ namespace Laboratorio_3_de_repaso
 
             Propietario_mayor temppropietario = propietario_Mayor.OrderByDescending(al => al.Contador_propiedades).First();
             label1.Text = temppropietario.Nombre_apellido;
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            string temp_cuota= "";
+            propiedades = propiedades.OrderByDescending(cuota => cuota.Cuota_mantenimiento).ToList();
+            for (int x = 0; x < 3; x++)
+            {
+                temp_cuota = temp_cuota + propiedades[x].Cuota_mantenimiento + "\n";
+
+            }
         }
     }
 }
