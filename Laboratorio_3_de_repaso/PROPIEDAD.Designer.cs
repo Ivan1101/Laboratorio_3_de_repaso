@@ -134,7 +134,9 @@ namespace Laboratorio_3_de_repaso
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "PROPIEDAD";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PROPIEDAD";
+            this.Load += new System.EventHandler(this.PROPIEDAD_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

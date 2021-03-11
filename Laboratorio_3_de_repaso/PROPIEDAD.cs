@@ -36,6 +36,17 @@ namespace Laboratorio_3_de_repaso
        
         public void guardar_datos()
         {
+            FileStream stream = new FileStream(archivo2, FileMode.OpenOrCreate, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(stream);
+
+            for (int i = 0; i < propiedades.Count; i++)
+            {
+                writer.WriteLine(propiedades[i].No_casa);
+                writer.WriteLine(propiedades[i].Dpi_dueño);
+                writer.WriteLine(propiedades[i].Cuota_mantenimiento);
+            }
+            writer.Close();
+
             FileStream stream2 = new FileStream(archivo3, FileMode.OpenOrCreate, FileAccess.Write);
             StreamWriter writer2 = new StreamWriter(stream2);
 
@@ -49,17 +60,7 @@ namespace Laboratorio_3_de_repaso
 
         }
         public void leer_datos (){
-            FileStream stream = new FileStream(archivo1, FileMode.Open, FileAccess.Read);
-            StreamReader reader = new StreamReader(stream);
-            while (reader.Peek() > -1)
-            {
-                Propietarios propietario_temp = new Propietarios();
-                propietario_temp.Dpi = reader.ReadLine();
-                propietario_temp.Nombre = reader.ReadLine();
-                propietario_temp.Apellido = reader.ReadLine();
-                propietarios.Add(propietario_temp);
-            }
-            reader.Close();
+           
 
 
             FileStream stream2 = new FileStream(archivo2, FileMode.Open, FileAccess.Read);
@@ -73,6 +74,18 @@ namespace Laboratorio_3_de_repaso
                 propiedades.Add(propiedadestemp);
             }
             reader2.Close();
+
+            FileStream stream = new FileStream(archivo1, FileMode.Open, FileAccess.Read);
+            StreamReader reader = new StreamReader(stream);
+            while (reader.Peek() > -1)
+            {
+                Propietarios propietario_temp = new Propietarios();
+                propietario_temp.Dpi = reader.ReadLine();
+                propietario_temp.Nombre = reader.ReadLine();
+                propietario_temp.Apellido = reader.ReadLine();
+                propietarios.Add(propietario_temp);
+            }
+            reader.Close();
 
             FileStream stream4 = new FileStream(archivo3, FileMode.Open, FileAccess.Read);
             StreamReader reader4 = new StreamReader(stream4);
@@ -88,15 +101,22 @@ namespace Laboratorio_3_de_repaso
             reader4.Close();
         }
         public void  limpiar_ingreso() {
-          textBox_numero_casa.Text = "";
+          textBox_numero_casa.Text = null;
             comboBox_dpi.Text = null;
-            textBox_mantenimiento.Text = "";
+            textBox_mantenimiento.Text = null;
+        }
+        public void mostrar_dpi()
+        {       // Función para mostrar los dpis de los propietarios ingresados
+            comboBox_dpi.Text = null;
+            comboBox_dpi.DisplayMember = "Dpi";
+            comboBox_dpi.ValueMember = "Dpi";
+            comboBox_dpi.DataSource = propietarios;
+            comboBox_dpi.Refresh();
         }
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-
                 Dueño dueño_temp = new Dueño();
                 Propiedades propiedadestemp = new Propiedades();
                 propiedadestemp.No_casa = textBox_numero_casa.Text;
@@ -125,20 +145,19 @@ namespace Laboratorio_3_de_repaso
             }
             catch (Exception)
             {
-                MessageBox.Show("Falta el ingreso de un dato");
+               MessageBox.Show("Dato no ingresado");
+
             }
+                
+
+           
         }
         private void button2_Click(object sender, EventArgs e)
         {
+            mostrar_dpi(); // Se muestra los dpi ingresados en el combo
             comboBox_dpi.Enabled = true;
             textBox_numero_casa.Enabled = true;
             textBox_mantenimiento.Enabled = true;
-
-            comboBox_dpi.DisplayMember = "Dpi";
-            comboBox_dpi.ValueMember = "Nombre";
-            comboBox_dpi.DataSource = null;
-            comboBox_dpi.DataSource = propietarios;
-            comboBox_dpi.Refresh();
 
             button2.Visible = false;
         }
@@ -148,6 +167,11 @@ namespace Laboratorio_3_de_repaso
             Inicio regresar = new Inicio();
             regresar.Show();
             this.SetVisibleCore(false);
+        }
+
+        private void PROPIEDAD_Load(object sender, EventArgs e)
+        {
+            leer_datos();
         }
     }
 }

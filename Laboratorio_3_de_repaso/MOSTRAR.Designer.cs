@@ -34,9 +34,9 @@ namespace Laboratorio_3_de_repaso
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(75, 243);
+            this.button1.Location = new System.Drawing.Point(65, 237);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(85, 29);
             this.button1.TabIndex = 0;
             this.button1.Text = "Regresar";
             this.button1.UseVisualStyleBackColor = true;
@@ -49,6 +49,7 @@ namespace Laboratorio_3_de_repaso
             this.ClientSize = new System.Drawing.Size(651, 294);
             this.Controls.Add(this.button1);
             this.Name = "MOSTRAR";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MOSTRAR";
             this.ResumeLayout(false);
 

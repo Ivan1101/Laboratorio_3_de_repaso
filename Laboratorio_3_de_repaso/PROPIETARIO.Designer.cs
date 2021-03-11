@@ -121,6 +121,7 @@ namespace Laboratorio_3_de_repaso
             this.Controls.Add(this.textBox_Nombre);
             this.Controls.Add(this.textBox_Dpi);
             this.Name = "PROPIETARIO";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
