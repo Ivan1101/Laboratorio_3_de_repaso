@@ -70,5 +70,12 @@ namespace Laboratorio_3_de_repaso
         {
             leer_datos("Propietarios.txt");
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Inicio regresar = new Inicio();
+            regresar.Show();
+            this.SetVisibleCore(false);
+        }
     }
 }

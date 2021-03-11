@@ -142,5 +142,12 @@ namespace Laboratorio_3_de_repaso
 
             button2.Visible = false;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Inicio regresar = new Inicio();
+            regresar.Show();
+            this.SetVisibleCore(false);
+        }
     }
 }

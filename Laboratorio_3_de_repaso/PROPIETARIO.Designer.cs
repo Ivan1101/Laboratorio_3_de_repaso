@@ -36,6 +36,7 @@ namespace Laboratorio_3_de_repaso
             this.label3 = new System.Windows.Forms.Label();
             this.textBox_Apellido = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox_Dpi
@@ -96,11 +97,22 @@ namespace Laboratorio_3_de_repaso
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form1
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(44, 194);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(77, 29);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Regresar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // PROPIETARIO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(392, 235);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox_Apellido);
             this.Controls.Add(this.label3);
@@ -108,7 +120,7 @@ namespace Laboratorio_3_de_repaso
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_Nombre);
             this.Controls.Add(this.textBox_Dpi);
-            this.Name = "Form1";
+            this.Name = "PROPIETARIO";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -125,6 +137,7 @@ namespace Laboratorio_3_de_repaso
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox_Apellido;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
