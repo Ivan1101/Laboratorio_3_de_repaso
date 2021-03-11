@@ -58,14 +58,14 @@ namespace Laboratorio_3_de_repaso
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        { //Se ordena los datos de acuerdo a la cuota mantenimineto de forma descedentemente
-            dueño= dueño.OrderByDescending(cuota => cuota.Cuota_mantenimiento).ToList();
+        { //Se ordena los datos de acuerdo a la cuota mantenimineto de forma ascedentemente
+            dueño = dueño.OrderBy(cuota => cuota.Cuota_mantenimiento).ToList();
             mostrar();
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {//Se ordena los datos de acuerdo a la cuota mantenimineto de forma ascedentemente
-            dueño = dueño.OrderBy(cuota => cuota.Cuota_mantenimiento).ToList();
+        {//Se ordena los datos de acuerdo a la cuota mantenimineto de forma descedentemente
+            dueño = dueño.OrderByDescending(cuota => cuota.Cuota_mantenimiento).ToList();
             mostrar();
         }
     }
