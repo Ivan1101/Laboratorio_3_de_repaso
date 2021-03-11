@@ -56,14 +56,21 @@ namespace Laboratorio_3_de_repaso
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Propietarios propietariostemp = new Propietarios();
-            propietariostemp.Dpi = textBox_Dpi.Text;
-            propietariostemp.Nombre = textBox_Nombre.Text;
-            propietariostemp.Apellido = textBox_Apellido.Text;
-            propietarios.Add(propietariostemp);
-            guardar_datos("Propietarios.txt");
-            limpiar();
-            MessageBox.Show("Propietario agregado correctamente");
+            try
+            {
+                Propietarios propietariostemp = new Propietarios();
+                propietariostemp.Dpi = textBox_Dpi.Text;
+                propietariostemp.Nombre = textBox_Nombre.Text;
+                propietariostemp.Apellido = textBox_Apellido.Text;
+                propietarios.Add(propietariostemp);
+                guardar_datos("Propietarios.txt");
+                limpiar();
+                MessageBox.Show("Propietario agregado correctamente");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Dato no ingresado");
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
