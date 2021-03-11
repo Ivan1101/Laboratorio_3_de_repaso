@@ -128,7 +128,7 @@ namespace Laboratorio_3_de_repaso
                 comboBox_dpi.ValueMember = "Apellido";
                 comboBox_dpi.DataSource = propietarios;
                 tempapellido = comboBox_dpi.SelectedValue.ToString();
-
+                // Se concatena las dos variables de clase dueño para mostrarlo
                 dueño_temp.Nombre_apellido = tempnombre + " " + tempapellido;
 
                 propiedadestemp.Cuota_mantenimiento = float.Parse(textBox_mantenimiento.Text);
